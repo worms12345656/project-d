@@ -8,10 +8,29 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        mainPage: 'inset 0 10px 58px 20px black',
+      },
+      backgroundPosition: {
+        logo: '1px 1px',
+      },
+      backgroundSize: {
+        logo: '27px 27px',
+        mainPage: '100% 100%',
+      },
+      backgroundImage: {
+        logo: "url('/logo.png')",
+        mainPage: 'url(/main-page.jpg)',
+      },
       gridTemplateColumns: {
         '13': 'repeat(13, minmax(0, 1fr))',
       },
       colors: {
+        red: {
+          400: '#f87171',
+          500: '#ef4444',
+          600: '#dc2626',
+        },
         blue: {
           400: '#2589FE',
           500: '#0070F3',
