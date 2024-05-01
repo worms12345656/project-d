@@ -2,6 +2,7 @@ import '@/app/ui/global.css';
 import { inter } from '@/app/ui/fonts';
 import { Metadata } from 'next';
 import Header from './ui/layout/header';
+import Footer from './ui/layout/footer';
 
 export const metadata: Metadata = {
   title: 'Saber Chat',
@@ -21,6 +22,7 @@ export default function RootLayout({
           <Header />
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );
