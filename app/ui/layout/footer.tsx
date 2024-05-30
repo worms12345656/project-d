@@ -4,14 +4,14 @@ export default function Footer() {
   return (
     <div className="h-auto w-full bg-black">
       <div className="m-auto flex w-3/4 flex-row justify-between py-5">
-        <AcmeLogo />
+        <AcmeLogo text="light" />
         <>
           <div className="flex flex-col gap-4">
             <span className=" text-sky-500">Product</span>
             <Link className="pt-2 text-white hover:underline" href={'/'}>
               Nitro
             </Link>
-            <Link className=" text-white hover:underline" href={'/'}>
+            <Link className=" text-white hover:underline" href={'/login'}>
               Status
             </Link>
             <Link className=" text-white hover:underline" href={'/'}>

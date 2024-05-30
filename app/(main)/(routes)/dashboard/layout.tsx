@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import SideNav from '../ui/dashboard/sidenav';
 
 import { Metadata } from 'next';
+import SideNav from '@/app/ui/dashboard/sidenav';
 
 export const metadata: Metadata = {
   title: {

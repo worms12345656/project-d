@@ -3,6 +3,7 @@ import { inter } from '@/app/ui/fonts';
 import { Metadata } from 'next';
 import Header from './ui/layout/header';
 import Footer from './ui/layout/footer';
+import { db } from './lib/db';
 
 export const metadata: Metadata = {
   title: 'Saber Chat',
@@ -10,20 +11,14 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
-        <div className="m-auto w-3/4 flex-col">
-          <Header />
-          {children}
-        </div>
-        <Footer />
-      </body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }

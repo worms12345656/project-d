@@ -13,14 +13,17 @@ const config: Config = {
       },
       backgroundPosition: {
         logo: '1px 1px',
+        googleIcon: '50% 50%',
       },
       backgroundSize: {
         logo: '27px 27px',
         mainPage: '100% 100%',
+        googleIcon: '20px 20px',
       },
       backgroundImage: {
         logo: "url('/logo.png')",
         mainPage: 'url(/main-page.jpg)',
+        googleIcon: 'url(/google-icon.png)',
       },
       gridTemplateColumns: {
         '13': 'repeat(13, minmax(0, 1fr))',

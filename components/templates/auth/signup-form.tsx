@@ -7,17 +7,18 @@ import {
   ExclamationCircleIcon,
 } from '@heroicons/react/24/outline';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
-import { Button } from './button';
+import { Button } from '../../../app/ui/button';
 import { useFormState } from 'react-dom';
-import { authenticate } from '../lib/action';
+import { authenticate } from '../../../app/lib/action';
+import Link from 'next/link';
 
-export default function LoginForm() {
+export default function SignupForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
   return (
     <form action={dispatch} className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
         <h1 className={`${lusitana.className} mb-3 text-2xl`}>
-          Please log in to continue.
+          Please Sign up to continue.
         </h1>
         <div className="w-full">
           <div>
@@ -60,7 +61,10 @@ export default function LoginForm() {
             </div>
           </div>
         </div>
+        <SignupButton />
+        <p className="mt-3 text-center text-sm">Already have account ?</p>
         <LoginButton />
+
         <div className="flex h-8 items-end space-x-1">
           {/* Add form errors here */}
           <div
@@ -81,10 +85,22 @@ export default function LoginForm() {
   );
 }
 
-function LoginButton() {
+function SignupButton() {
   return (
     <Button className="mt-4 w-full">
-      Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+      Sign up <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
     </Button>
+  );
+}
+
+function LoginButton() {
+  return (
+    <Link
+      className="flex h-10 w-full items-center rounded-lg bg-black px-4 text-sm font-medium text-white transition-colors hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-green-500 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
+      type="button"
+      href={'/login'}
+    >
+      Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+    </Link>
   );
 }
